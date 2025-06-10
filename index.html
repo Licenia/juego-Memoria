@@ -1,13 +1,31 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+    <title>Juego Memoria</title>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <section>
+      <h1>Memory Card</h1>
+      <h2>Instrucciones</h2>
+      <p>
+        Al comenzar el juego aparecera un tablero con varias cartas en desorden
+        tendra que encontrar los pares de las imagenes correspondientes dispone
+        de 3 vidas y un temporizador para encontrar todos los pares
+      </p>
+      <button>Empezar</button>
+    </section>
+    <section class="cards-container">
+    </section>
+      <template id="template-card">
+        <figure class="cards">
+          <img src="" alt="">
+          <figcaption></figcaption>  
+        </figure>
+      </template>
+    <script type="module" src="/src/js/card.js"></script>
   </body>
 </html>
