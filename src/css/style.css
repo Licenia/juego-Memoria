@@ -1,0 +1,21 @@
+*,
+::before,
+::after{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.cards-container{
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.cards{
+    width: 50%;
+    text-align: center;
+}
+
+.cards > img {
+    width: 50%;
+}
