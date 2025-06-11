@@ -1,21 +1,51 @@
 *,
 ::before,
-::after{
-    box-sizing: border-box;
-    margin: 0;
+::after {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.cards-container{
-    display: flex;
-    width: 100%;
-    height: auto;
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.cards{
-    width: 50%;
-    text-align: center;
+.card {
+  width: 200px;
+  height: 200px;
 }
 
-.cards > img {
-    width: 50%;
+.card-inner {
+  transition: 1.5s;
+  transform-style: preserve-3d;
 }
+
+.card-front img {
+  width: 200px;
+  height: 200px;
+}
+
+.card-back {
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.card-back img {
+  width: 200px;
+  height: 200px;
+}
+
+div {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  backface-visibility: hidden;
+  display: block;
+}
+
+.card-inner.is-flipped {
+  transform: rotateY(-180deg);
+}
+
