@@ -8,17 +8,20 @@
     <title>Juego Memoria</title>
   </head>
   <body>
-    <section>
-      <h1>Memory Card</h1>
-      <h2>Instrucciones</h2>
-      <p>
-        Al comenzar el juego aparecera un tablero con varias cartas en desorden
-        tendra que encontrar los pares de las imagenes correspondientes dispone
-        de 3 vidas y un temporizador para encontrar todos los pares
-      </p>
-      <button>Empezar</button>
+    <section class="container-grid">
+      <section class="header">
+        <h1>Memory Card</h1>
+        <h2>Instrucciones</h2>
+        <p>
+          Al comenzar el juego aparecera un tablero con varias cartas en desorden
+          tendra que encontrar los pares de las imagenes correspondientes dispone
+          de 3 vidas y un temporizador para encontrar todos los pares
+        </p>
+        <button>Empezar</button>
+      </section>
+      <section class="cards-container"></section>
+      <footer><p>@copyRigth Licenia Alvear 2025</p></footer>
     </section>
-    <section class="cards-container"></section>
     <template id="template-card">
       <section class="card">
         <figure class="card-inner">
