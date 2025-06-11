@@ -5,6 +5,38 @@
   margin: 0;
 }
 
+.container-grid{
+display: grid;
+grid-template-rows: 250px 1fr 50px;
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.header > h1{
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.header > h2{
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+}
+
+.header > p{
+  font-size: clamp(.9rem, 2.5vw, 1.2rem);
+}
+
+.header >button{
+  width: 200px;
+  padding: .6rem;
+  border-radius: .6rem;
+  margin: .8rem;
+  align-self: center;
+}
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;
@@ -47,5 +79,11 @@ div {
 
 .card-inner.is-flipped {
   transform: rotateY(-180deg);
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
