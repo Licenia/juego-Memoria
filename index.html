@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/src/css/style.css">
+    <link rel="stylesheet" href="/src/css/style.css" />
     <title>Juego Memoria</title>
   </head>
   <body>
@@ -18,14 +18,20 @@
       </p>
       <button>Empezar</button>
     </section>
-    <section class="cards-container">
-    </section>
-      <template id="template-card">
-        <figure class="cards">
-          <img src="" alt="">
-          <figcaption></figcaption>  
+    <section class="cards-container"></section>
+    <template id="template-card">
+      <section class="card">
+        <figure class="card-inner">
+          <div class="card-front">
+            <img src="" alt="" />
+          </div>
+          <div class="card-back">
+            <img src="" alt="" />
+            <figcaption></figcaption>
+          </div>
         </figure>
-      </template>
+      </section>
+    </template>
     <script type="module" src="/src/js/card.js"></script>
   </body>
 </html>
