@@ -1,3 +1,5 @@
+import { mostrarCartas } from "./game.js";
+
 const $cards = document.querySelector(".cards-container"),
   $template = document.getElementById("template-card").content,
   $fragment = document.createDocumentFragment(),
@@ -40,12 +42,12 @@ allCards.forEach((el) => {
   $clone.querySelector(".card-back img").setAttribute("alt", el.title);
   $clone.querySelector("figcaption").textContent = el.title;
 
-  const cardInner = $clone.querySelector(".card-inner");
-  $clone.querySelector(".card").addEventListener("click", () => {
-    cardInner.classList.toggle("is-flipped");
-  });
-
   $fragment.appendChild($clone);
 });
 
 $cards.appendChild($fragment);
+
+const iniciarJuego = document.getElementById("empezar-juego");
+iniciarJuego.addEventListener("click", () => {
+  mostrarCartas();
+})
