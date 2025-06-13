@@ -47,7 +47,21 @@ allCards.forEach((el) => {
 
 $cards.appendChild($fragment);
 
+const $contenedorVidas = document.querySelector(".lives"),
+  $templateVidas = document.getElementById("vidas").content,
+  $fragmentVidas = document.createDocumentFragment();
+
+for (let i = 1; i < 4; i++) {
+  let $clone2 = document.importNode($templateVidas, true);
+  $clone2.querySelector("img").setAttribute("src", "./public/corazon.png");
+  $clone2.querySelector("img").setAttribute("alt", "Corazon");
+
+  $fragmentVidas.appendChild($clone2);
+}
+
+$contenedorVidas.appendChild($fragmentVidas);
+
 const iniciarJuego = document.getElementById("empezar-juego");
 iniciarJuego.addEventListener("click", () => {
   mostrarCartas();
-})
+});
