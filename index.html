@@ -13,12 +13,20 @@
         <h1>Memory Card</h1>
         <h2>Instrucciones</h2>
         <p>
-          Al comenzar el juego aparecera un tablero con varias cartas en desorden
-          tendra que encontrar los pares de las imagenes correspondientes dispone
-          de 3 vidas y un temporizador para encontrar todos los pares
+          Al comenzar el juego aparecera un tablero con varias cartas en
+          desorden tendra que encontrar los pares de las imagenes
+          correspondientes dispone de 3 vidas y un temporizador para encontrar
+          todos los pares
         </p>
         <button id="empezar-juego">Empezar</button>
       </section>
+      <nav>
+        <div class="lives"></div>
+        <div class="marco">
+          <div class="tiempo" id="tiempo">00:00</div>
+        </div>
+        <span>Puntaje</span>
+      </nav>
       <section class="cards-container"></section>
       <footer><p>@copyRigth Licenia Alvear 2025</p></footer>
     </section>
@@ -34,6 +42,9 @@
           </div>
         </figure>
       </section>
+    </template>
+    <template id="vidas">
+      <img src="" alt="" />
     </template>
     <script type="module" src="/src/js/card.js"></script>
   </body>
