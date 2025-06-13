@@ -5,36 +5,36 @@
   margin: 0;
 }
 
-.container-grid{
-display: grid;
-grid-template-rows: 250px 1fr 50px;
-min-height: 100vh;
+.container-grid {
+  display: grid;
+  grid-template-rows: 250px 50px 1fr 50px;
+  min-height: 100vh;
 }
 
-.header{
+.header {
   display: flex;
   flex-direction: column;
   padding: 1rem;
 }
 
-.header > h1{
+.header > h1 {
   text-align: center;
   font-size: clamp(2rem, 5vw, 3rem);
 }
 
-.header > h2{
+.header > h2 {
   font-size: clamp(1.8rem, 3vw, 2.8rem);
 }
 
-.header > p{
-  font-size: clamp(.9rem, 2.5vw, 1.2rem);
+.header > p {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
 }
 
-.header >button{
+.header > button {
   width: 200px;
-  padding: .6rem;
-  border-radius: .6rem;
-  margin: .8rem;
+  padding: 0.6rem;
+  border-radius: 0.6rem;
+  margin: 0.8rem;
   align-self: center;
 }
 
@@ -70,7 +70,7 @@ min-height: 100vh;
   height: 200px;
 }
 
-div {
+.card-inner > div {
   width: 200px;
   height: 200px;
   position: absolute;
@@ -82,8 +82,43 @@ div {
   transform: rotateY(-180deg);
 }
 
-footer{
+footer {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 8rem;
+  gap: 1rem;
+}
+
+.lives {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.lives > img {
+  width: 40px;
+  height: auto;
+}
+
+.marco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.tiempo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+span {
+  font-weight: bold;
 }
