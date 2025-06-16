@@ -12,23 +12,24 @@ export const mostrarCartas = () => {
   }, 5000);
 };
 
-const idTiempo = setInterval(temporizador, 1000);
-
+let idTiempo;
 let contador = 50;
-function temporizador() {
-  let tiempo = document.getElementById("tiempo");
-  tiempo.innerHTML = `00:${contador.toString().padStart(2, "0")}`;
-  contador--;
+export function temporizador() {
+  idTiempo = setInterval(() => {
+    let tiempo = document.getElementById("tiempo");
+    tiempo.innerHTML = `00:${contador.toString().padStart(2, "0")}`;
+    contador--;
 
-  if (contador < 0) {
-    clearInterval(idTiempo);
-  }
+    if (contador < 0) {
+      clearInterval(idTiempo);
+    }
+  }, 1000);
 }
 
 let juegoTerminado = false;
 let puntaje = 0;
 let paresEncontrados = 0;
-const totalPares = 5; 
+const totalPares = 5;
 
 function controlarJuego() {
   let primeraCarta = null;
@@ -70,7 +71,6 @@ function controlarJuego() {
         }
         primeraCarta = null;
         segundaCarta = null;
-
       } else {
         gestionarVidas(vidas);
 
@@ -103,17 +103,21 @@ function gestionarVidas() {
 
 function actualizarPuntaje(valor) {
   puntaje += valor;
-  document.getElementById("puntaje").textContent = puntaje 
+  document.getElementById("puntaje").textContent = puntaje;
 }
 
 function mostrarMensajePerdiste() {
-  const mensajePerdiste = document.getElementById("mensaje-final");
+  const mensajePerdiste = document.getElementById("mensaje-final"),
+    puntajeFinal = document.getElementById("puntaje-final");
+
+  puntajeFinal.textContent = `Puntaje obtenido: ${puntaje} puntos`;
   mensajePerdiste.classList.remove("oculto");
 }
 
 function mostrarMensajeVictoria() {
   const mensajeVictoria = document.getElementById("mensaje-victoria");
+  puntajeFinal = document.getElementById("puntaje-final");
+
+  puntajeFinal.textContent = `Puntaje obtenido: ${puntaje} puntos`;
   mensajeVictoria.classList.remove("oculto");
 }
-
-
