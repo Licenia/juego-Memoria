@@ -122,3 +122,39 @@ nav {
 span {
   font-weight: bold;
 }
+
+.mensaje {
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.oculto {
+  display: none;
+}
+
+.boton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #1d3557;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.boton:hover {
+  background-color: #457b9d;
+}
+

@@ -20,14 +20,21 @@
         </p>
         <button id="empezar-juego">Empezar</button>
       </section>
-      <nav>
+      <nav id="navegacion" class="oculto">
         <div class="lives"></div>
         <div class="marco">
           <div class="tiempo" id="tiempo">00:00</div>
         </div>
-        <span>Puntaje</span>
+        <p>Puntaje:<span id="puntaje"> 0</span></p>
       </nav>
-      <section class="cards-container"></section>
+      <section id="cards-container" class="cards-container oculto"></section>
+      <div id="mensaje-victoria" class="mensaje oculto">
+        ¡You win 🎉!
+        <button id="btn-reiniciar" class="boton">Reiniciar</button>
+      </div>
+      <div id="mensaje-final" class="mensaje oculto">¡Game Over!
+         <button id="btn-reiniciar-perder" class="boton">Reintentar</button>
+      </div>
       <footer><p>@copyRigth Licenia Alvear 2025</p></footer>
     </section>
     <template id="template-card">
