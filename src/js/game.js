@@ -25,6 +25,11 @@ function temporizador() {
   }
 }
 
+let juegoTerminado = false;
+let puntaje = 0;
+let paresEncontrados = 0;
+const totalPares = 5; 
+
 function controlarJuego() {
   let primeraCarta = null;
   let segundaCarta = null;
@@ -32,6 +37,7 @@ function controlarJuego() {
   const contenedor = document.querySelector(".cards-container");
 
   contenedor.addEventListener("click", (e) => {
+    if (juegoTerminado) return;
     const cardInner = e.target.closest(".card-inner");
 
     if (
@@ -56,12 +62,17 @@ function controlarJuego() {
         .getAttribute("src");
 
       if (img1 === img2) {
+        actualizarPuntaje(20);
+        paresEncontrados++;
+
+        if (paresEncontrados === totalPares) {
+          mostrarMensajeVictoria();
+        }
         primeraCarta = null;
         segundaCarta = null;
 
-        console.log("Es un par");
       } else {
-        console.log("No acertaste");
+        gestionarVidas(vidas);
 
         setTimeout(() => {
           primeraCarta.classList.remove("is-flipped");
@@ -75,3 +86,34 @@ function controlarJuego() {
 }
 
 controlarJuego();
+
+function gestionarVidas() {
+  const corazones = document.querySelectorAll(".lives img");
+
+  if (corazones.length > 0) {
+    corazones[corazones.length - 1].remove();
+  }
+  if (corazones.length === 1) {
+    juegoTerminado = true;
+    setTimeout(() => {
+      mostrarMensajePerdiste();
+    }, 800);
+  }
+}
+
+function actualizarPuntaje(valor) {
+  puntaje += valor;
+  document.getElementById("puntaje").textContent = puntaje 
+}
+
+function mostrarMensajePerdiste() {
+  const mensajePerdiste = document.getElementById("mensaje-final");
+  mensajePerdiste.classList.remove("oculto");
+}
+
+function mostrarMensajeVictoria() {
+  const mensajeVictoria = document.getElementById("mensaje-victoria");
+  mensajeVictoria.classList.remove("oculto");
+}
+
+
