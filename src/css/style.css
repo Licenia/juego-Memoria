@@ -7,7 +7,7 @@
 
 .container-grid {
   display: grid;
-  grid-template-rows: 250px 50px 1fr 50px;
+  grid-template-rows: repeat(2, auto);
   min-height: 100vh;
 }
 
@@ -157,4 +157,3 @@ span {
 .boton:hover {
   background-color: #457b9d;
 }
-
