@@ -38,6 +38,7 @@ allCards.forEach((el) => {
     .setAttribute("src", "./public/img004.jpg");
   $clone.querySelector(".card-front img").setAttribute("alt", "Reverso");
 
+
   $clone.querySelector(".card-back img").setAttribute("src", el.img);
   $clone.querySelector(".card-back img").setAttribute("alt", el.title);
   $clone.querySelector("figcaption").textContent = el.title;
@@ -63,5 +64,19 @@ $contenedorVidas.appendChild($fragmentVidas);
 
 const iniciarJuego = document.getElementById("empezar-juego");
 iniciarJuego.addEventListener("click", () => {
+  const navegacion = document.getElementById("navegacion"),
+  tableroJuego = document.getElementById("cards-container");
+
+  navegacion.classList.remove("oculto")
+  tableroJuego.classList.remove("oculto")
   mostrarCartas();
 });
+
+document.getElementById("btn-reiniciar").addEventListener("click", () => {
+  location.reload();
+});
+
+document.getElementById("btn-reiniciar-perder").addEventListener("click", () => {
+  location.reload();
+});
+
