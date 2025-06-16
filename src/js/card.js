@@ -1,4 +1,4 @@
-import { mostrarCartas } from "./game.js";
+import { mostrarCartas, temporizador} from "./game.js";
 
 const $cards = document.querySelector(".cards-container"),
   $template = document.getElementById("template-card").content,
@@ -63,12 +63,20 @@ for (let i = 1; i < 4; i++) {
 $contenedorVidas.appendChild($fragmentVidas);
 
 const iniciarJuego = document.getElementById("empezar-juego");
+
 iniciarJuego.addEventListener("click", () => {
   const navegacion = document.getElementById("navegacion"),
-  tableroJuego = document.getElementById("cards-container");
+  tableroJuego = document.getElementById("cards-container"),
+  subtitulo = document.querySelector("h2"),
+  parrafo = document.querySelector("p");
 
-  navegacion.classList.remove("oculto")
-  tableroJuego.classList.remove("oculto")
+  iniciarJuego.classList.add("oculto");
+  subtitulo.classList.add("oculto");
+  parrafo.classList.add("oculto");
+  navegacion.classList.remove("oculto");
+  tableroJuego.classList.remove("oculto");
+
+  temporizador();
   mostrarCartas();
 });
 
