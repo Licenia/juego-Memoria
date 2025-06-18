@@ -22,6 +22,11 @@ export function temporizador() {
 
     if (contador < 0) {
       clearInterval(idTiempo);
+      juegoTerminado = true;
+      mostrarMensajePerdiste();
+    }
+    if (contador <= 10) {
+      tiempo.style.color = "red";
     }
   }, 1000);
 }
@@ -29,7 +34,7 @@ export function temporizador() {
 let juegoTerminado = false;
 let puntaje = 0;
 let paresEncontrados = 0;
-const totalPares = 5;
+const totalPares = 6;
 
 function controlarJuego() {
   let primeraCarta = null;
@@ -107,17 +112,32 @@ function actualizarPuntaje(valor) {
 }
 
 function mostrarMensajePerdiste() {
+  clearInterval(idTiempo);
+
   const mensajePerdiste = document.getElementById("mensaje-final"),
-    puntajeFinal = document.getElementById("puntaje-final");
+    puntajeFinal = document.getElementById("puntaje-final-perdiste");
 
   puntajeFinal.textContent = `Puntaje obtenido: ${puntaje} puntos`;
   mensajePerdiste.classList.remove("oculto");
 }
 
 function mostrarMensajeVictoria() {
-  const mensajeVictoria = document.getElementById("mensaje-victoria");
-  puntajeFinal = document.getElementById("puntaje-final");
+  clearInterval(idTiempo);
+  const $mensajeVictoria = document.getElementById("mensaje-victoria"),
+    $puntajeFinal = document.getElementById("puntaje-final-victoria"),
+    $puntosExtras = document.getElementById("puntos-extras");
 
-  puntajeFinal.textContent = `Puntaje obtenido: ${puntaje} puntos`;
-  mensajeVictoria.classList.remove("oculto");
+  let puntosExtra = 0;
+
+  if (contador > 0) {
+    puntosExtra = contador * 2;
+    puntaje += puntosExtra;
+    $puntosExtras.textContent = `Puntaje extra: ${puntosExtra}`;
+    document.getElementById("puntaje").textContent = puntaje;
+  } else {
+    $puntosExtras.textContent = "";
+  }
+
+  $puntajeFinal.textContent = `Puntaje obtenido: ${puntaje}`;
+  $mensajeVictoria.classList.remove("oculto");
 }
