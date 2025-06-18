@@ -46,7 +46,6 @@ juego-Memoria/
 │   ├── palta.png
 │   ├── pera.png
 │   └── repollo.png
-├── vite.config.js
 └── package.json
 
 ```
