@@ -6,27 +6,27 @@ const $cards = document.querySelector(".cards-container"),
   cardContent = [
     {
       title: "Fresa",
-      img: "/public/fresa.png",
+      img: "/fresa.png",
     },
     {
       title: "Naranja",
-      img: "/public/naranja.png",
+      img: "/naranja.png",
     },
     {
       title: "Aguacate",
-      img: "/public/palta.png",
+      img: "/palta.png",
     },
     {
       title: "Pera",
-      img: "/public/pera.png",
+      img: "/pera.png",
     },
     {
       title: "Lechuga",
-      img: "/public/repollo.png",
+      img: "/repollo.png",
     },
     {
       title: "Platano",
-      img: "/public/platano.png",
+      img: "/platano.png",
     }
   ];
 
@@ -39,7 +39,7 @@ allCards.forEach((el) => {
 
   $clone
     .querySelector(".card-front img")
-    .setAttribute("src", "/public/gato.jpeg");
+    .setAttribute("src", "/gato.jpeg");
   $clone.querySelector(".card-front img").setAttribute("alt", "Reverso");
 
 
@@ -58,7 +58,7 @@ const $contenedorVidas = document.querySelector(".lives"),
 
 for (let i = 1; i < 4; i++) {
   let $clone2 = document.importNode($templateVidas, true);
-  $clone2.querySelector("img").setAttribute("src", "/public/corazon.png");
+  $clone2.querySelector("img").setAttribute("src", "/corazon.png");
   $clone2.querySelector("img").setAttribute("alt", "Corazon");
 
   $fragmentVidas.appendChild($clone2);
