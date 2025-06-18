@@ -24,6 +24,10 @@ const $cards = document.querySelector(".cards-container"),
       title: "Lechuga",
       img: "./public/repollo.png",
     },
+    {
+      title: "Platano",
+      img: "./public/platano.png",
+    }
   ];
 
 const allCards = [...cardContent, ...cardContent];
@@ -35,7 +39,7 @@ allCards.forEach((el) => {
 
   $clone
     .querySelector(".card-front img")
-    .setAttribute("src", "./public/img004.jpg");
+    .setAttribute("src", "./public/gato.jpeg");
   $clone.querySelector(".card-front img").setAttribute("alt", "Reverso");
 
 
