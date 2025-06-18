@@ -50,6 +50,12 @@ juego-Memoria/
 └── package.json
 
 ```
+## Proyecto publicado en Netlify
+
+Puedes probar la aplicación directamente en el siguiente enlace:
+
+https://miauw-card.netlify.app/
+
 
 ## Como ejecutar el proyecto de manera local
 
