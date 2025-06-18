@@ -3,6 +3,7 @@
 ::after {
   box-sizing: border-box;
   margin: 0;
+  font-family: "Playfair Display";
 }
 
 .container-grid {
@@ -18,16 +19,22 @@
 }
 
 .header > h1 {
+  color: rgb(244, 155, 117);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   text-align: center;
   font-size: clamp(2rem, 5vw, 3rem);
 }
 
 .header > h2 {
   font-size: clamp(1.8rem, 3vw, 2.8rem);
+    color: rgb(156, 151, 149);
+
 }
 
 .header > p {
+  align-items: center;
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  color: rgb(135, 131, 130);
 }
 
 .header > button {
@@ -86,6 +93,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  color: rgb(173, 171, 171);
+  padding: 1.8rem;
 }
 
 nav {
@@ -116,7 +125,7 @@ nav {
 
 .tiempo {
   font-weight: bold;
-  font-size: 1.2rem;
+   font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 span {
@@ -124,6 +133,9 @@ span {
 }
 
 .mensaje {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 2rem;
   text-align: center;
   color: white;
@@ -143,17 +155,85 @@ span {
 }
 
 .boton {
+  width: 50%;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #1d3557;
+  background-color: rgb(244, 155, 117);
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 1rem;
   transition: background-color 0.3s;
+  transition: transform 0.5s ease;
+  font-size: clamp(0.9rem, 3vw, 1rem);
 }
 
 .boton:hover {
-  background-color: #457b9d;
+  transform: scale(1.1);
+  background-color: rgb(243, 173, 143);
+}
+
+.puntaje {
+  color: rgb(186, 175, 171);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+
+
+@media (max-width: 678px) {
+  .container-grid {
+    padding: 1rem;
+  }
+
+  .header {
+    align-items: center;
+    text-align: center;
+  }
+
+  .header > button {
+    margin: 1rem 0;
+  }
+
+  .cards-container {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .card {
+    width: 120px;
+    height: 120px;
+  }
+
+  .card-front img,
+  .card-back img,
+  .card-inner > div {
+    width: 120px;
+    height: 120px;
+  }
+
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .lives {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .mensaje {
+    padding: 1rem;
+  }
+
+  .boton {
+    width: 80%;
+  }
+
+  .puntaje {
+    text-align: center;
+  }
+
+  footer {
+    font-size: 0.9rem;
+  }
 }
