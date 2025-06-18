@@ -4,21 +4,28 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/public/flor.jpeg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/src/css/style.css" />
-    <title>Juego Memoria</title>
+    <title>Miauw Card | Juego Memoria</title>
   </head>
   <body>
     <section class="container-grid">
       <section class="header">
-        <h1>Memory Card</h1>
+        <h1>Miauw Card</h1>
         <h2>Instrucciones</h2>
         <p>
-          Al comenzar el juego aparecera un tablero con varias cartas en
-          desorden tendra que encontrar los pares de las imagenes
-          correspondientes dispone de 3 vidas y un temporizador para encontrar
-          todos los pares
+          Al comenzar el juego, aparecerá un tablero con varias cartas
+          desordenadas. Deberás encontrar los pares de imágenes
+          correspondientes. Dispones de 3 vidas y un temporizador para encontrar
+          todos los pares.
         </p>
-        <button id="empezar-juego">Empezar</button>
+        <button id="empezar-juego" class="boton">Empezar</button>
       </section>
       <nav id="navegacion" class="oculto">
         <div class="lives"></div>
@@ -29,13 +36,16 @@
       </nav>
       <section id="cards-container" class="cards-container oculto"></section>
       <div id="mensaje-victoria" class="mensaje oculto">
-        ¡You win 🎉!
+        ¡Tu has ganado 🎉!
+        <span id="puntaje-final-victoria" class="puntaje"></span>
+        <span id="puntos-extras" class="puntaje"></span>
         <button id="btn-reiniciar" class="boton">Reiniciar</button>
       </div>
-      <div id="mensaje-final" class="mensaje oculto">¡Game Over!
-        <br>
-        <span id="puntaje-final"></span>
-         <button id="btn-reiniciar-perder" class="boton">Reintentar</button>
+      <div id="mensaje-final" class="mensaje oculto">
+        ¡Game Over!
+        <br />
+        <span id="puntaje-final-perdiste" class="puntaje"></span>
+        <button id="btn-reiniciar-perder" class="boton">Reintentar</button>
       </div>
       <footer><p>@copyRigth Licenia Alvear 2025</p></footer>
     </section>
