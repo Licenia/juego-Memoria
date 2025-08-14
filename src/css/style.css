@@ -94,8 +94,12 @@ footer {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  color: rgb(173, 171, 171);
   padding: 1.8rem;
+}
+
+footer a{
+  color: rgb(173, 171, 171);
+  text-decoration: none;
 }
 
 nav {
