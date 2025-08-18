@@ -1,9 +1,32 @@
+:root {
+  --color-texto: #fff;
+  --color-base: #3aa91b;
+  --sombra: #1d4e0c;
+  --brillo: #5fdc21;
+}
+
 *,
 ::before,
 ::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+body {
   font-family: "Playfair Display";
+  background: url(/public/fondo.jpeg);
+  background-image: cover;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: -1;
 }
 
 .container-grid {
@@ -19,22 +42,20 @@
 }
 
 .header > h1 {
-  color: rgb(244, 155, 117);
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  color: var(--color-texto);
   text-align: center;
   font-size: clamp(2rem, 5vw, 3rem);
 }
 
 .header > h2 {
   font-size: clamp(1.8rem, 3vw, 2.8rem);
-    color: rgb(156, 151, 149);
-
+  color: var(--color-texto);
 }
 
 .header > p {
   align-items: center;
   font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-  color: rgb(135, 131, 130);
+  color: var(--color-texto);
 }
 
 .header > button {
@@ -66,6 +87,7 @@
 .card-front img {
   width: 200px;
   height: 200px;
+  border-radius: 1rem;
 }
 
 .card-back {
@@ -97,8 +119,8 @@ footer {
   padding: 1.8rem;
 }
 
-footer a{
-  color: rgb(173, 171, 171);
+footer a {
+  color: var(--color-texto);
   text-decoration: none;
 }
 
@@ -129,8 +151,18 @@ nav {
 }
 
 .tiempo {
+  color: var(--brillo);
   font-weight: bold;
-   font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+.opcion{
+  color: var(--color-texto);
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+figcaption{
+  color: var(--color-texto);
 }
 
 span {
@@ -139,6 +171,7 @@ span {
 
 .mensaje {
   display: flex;
+  gap: .5rem;
   flex-direction: column;
   align-items: center;
   font-size: 2rem;
@@ -160,30 +193,32 @@ span {
 }
 
 .boton {
-  width: 50%;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: rgb(244, 155, 117);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  transition: transform 0.5s ease;
+  background-color: var(--color-base);
   font-size: clamp(0.9rem, 3vw, 1rem);
+  border-radius: 0.7rem;
+  border: 0;
+  color: var(--color-texto);
+  padding: 1rem;
+  font-weight: bold;
+  transition: transform 0.2s ease-out;
+  box-shadow: 0 5px 0 var(--sombra);
+  transition: transform 0.1s, box-shadow 0.1s;
 }
 
 .boton:hover {
-  transform: scale(1.1);
-  background-color: rgb(243, 173, 143);
+  background-color: var(--brillo);
+  cursor: pointer;
+}
+
+.boton:active {
+  box-shadow: none;
+  transform: translateY(1px);
 }
 
 .puntaje {
-  color: rgb(186, 175, 171);
+  color: var(--brillo);
   font-size: clamp(1rem, 3vw, 1.5rem);
 }
-
-
 
 @media (max-width: 678px) {
   .container-grid {
