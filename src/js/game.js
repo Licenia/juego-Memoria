@@ -95,10 +95,14 @@ controlarJuego();
 function gestionarVidas() {
   const corazones = document.querySelectorAll(".lives img");
 
-  if (corazones.length > 0) {
-    corazones[corazones.length - 1].remove();
+   const rojos = Array.from(corazones).filter(c => c.getAttribute("src") !== "/corazon-gris.png");
+
+  if (rojos.length > 0) {
+    const ultimoCorazon = rojos[rojos.length - 1];
+    ultimoCorazon.setAttribute("src", "/corazon-gris.png");
+    ultimoCorazon.setAttribute("alt", "Corazon gris");
   }
-  if (corazones.length === 1) {
+  if (rojos.length === 1) {
     juegoTerminado = true;
     setTimeout(() => {
       mostrarMensajePerdiste();
