@@ -31,9 +31,10 @@ body::before {
 
 .container-grid {
   display: grid;
-  grid-template-rows: repeat(2, auto);
+  grid-template-rows: repeat(3, auto);
   min-height: 100vh;
 }
+
 
 .header {
   display: flex;
@@ -70,7 +71,7 @@ body::before {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .card {
@@ -80,32 +81,36 @@ body::before {
 }
 
 .card-inner {
-  transition: 1.5s;
+  width: 100%;
+  height: 100%;
   transform-style: preserve-3d;
+  transition: 1.5s;
+  position: relative;
+  backface-visibility: hidden;
+  display: block;
 }
 
+.card-inner > .card-front,
+.card-inner > .card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-back img,
 .card-front img {
-  width: 200px;
-  height: 200px;
   border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-back {
   text-align: center;
   transform: rotateY(180deg);
-}
-
-.card-back img {
-  width: 200px;
-  height: 200px;
-}
-
-.card-inner > div {
-  width: 200px;
-  height: 200px;
-  position: absolute;
-  backface-visibility: hidden;
-  display: block;
 }
 
 .card-inner.is-flipped {
@@ -126,7 +131,7 @@ footer a {
 
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   padding: 1rem 8rem;
   gap: 1rem;
@@ -220,23 +225,41 @@ span {
   font-size: clamp(1rem, 3vw, 1.5rem);
 }
 
-@media (max-width: 678px) {
-  .container-grid {
-    padding: 1rem;
-  }
 
-  .header {
-    align-items: center;
-    text-align: center;
-  }
-
-  .header > button {
-    margin: 1rem 0;
+@media (max-width: 1024px) {
+  nav {
+    padding: 1rem 2rem;
+    gap: 0.8rem;
   }
 
   .cards-container {
-    flex-direction: row;
-    gap: 2rem;
+    gap: 0.8rem;
+  }
+
+  .card {
+    width: 150px;
+    height: 150px;
+  }
+
+  .header > button {
+    width: 160px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  nav {
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .cards-container {
+    gap: 0.5rem;
   }
 
   .card {
@@ -244,36 +267,26 @@ span {
     height: 120px;
   }
 
-  .card-front img,
-  .card-back img,
-  .card-inner > div {
-    width: 120px;
-    height: 120px;
-  }
-
-  nav {
-    flex-direction: column;
-    padding: 1rem;
-  }
-
-  .lives {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .mensaje {
-    padding: 1rem;
-  }
-
-  .boton {
-    width: 80%;
-  }
-
-  .puntaje {
-    text-align: center;
+  .header > button {
+    width: 140px;
+    font-size: 0.85rem;
+    padding: 0.5rem;
   }
 
   footer {
-    font-size: 0.9rem;
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .mensaje {
+    font-size: 1.5rem;
+    padding: 1rem;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  nav {
+    flex-direction: column;
   }
 }
