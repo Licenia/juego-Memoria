@@ -1,3 +1,5 @@
+import { totalPares } from "./card";
+
 export const mostrarCartas = () => {
   const cards = document.querySelectorAll(".card-inner");
 
@@ -34,7 +36,6 @@ export function temporizador() {
 let juegoTerminado = false;
 let puntaje = 0;
 let paresEncontrados = 0;
-const totalPares = 6;
 
 function controlarJuego() {
   let primeraCarta = null;

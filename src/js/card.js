@@ -30,8 +30,16 @@ const $cards = document.querySelector(".cards-container"),
     }
   ];
 
-const allCards = [...cardContent, ...cardContent];
+let pares;
+if (window.innerWidth < 600) {
+  pares = 4;
+}else{
+  pares = 6;
+}
 
+let cartasSeleccionadas = cardContent.slice(0, pares);
+
+const allCards = [...cartasSeleccionadas, ...cartasSeleccionadas];
 allCards.sort(() => Math.random() - 0.5);
 
 allCards.forEach((el) => {
@@ -39,18 +47,19 @@ allCards.forEach((el) => {
 
   $clone
     .querySelector(".card-front img")
-    .setAttribute("src", "/gato.jpeg");
+    .setAttribute("src", "/cat.jpg");
   $clone.querySelector(".card-front img").setAttribute("alt", "Reverso");
 
 
   $clone.querySelector(".card-back img").setAttribute("src", el.img);
   $clone.querySelector(".card-back img").setAttribute("alt", el.title);
-  $clone.querySelector("figcaption").textContent = el.title;
 
   $fragment.appendChild($clone);
 });
 
 $cards.appendChild($fragment);
+
+export const totalPares = pares;
 
 const $contenedorVidas = document.querySelector(".lives"),
   $templateVidas = document.getElementById("vidas").content,
@@ -83,6 +92,7 @@ iniciarJuego.addEventListener("click", () => {
   temporizador();
   mostrarCartas();
 });
+
 
 document.getElementById("btn-reiniciar").addEventListener("click", () => {
   location.reload();
